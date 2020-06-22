@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Eindproject2
+﻿namespace Eindproject2
 {
-    class EntityFramework
+    class NoSQL
     {
-        public EntityFramework()
+        public NoSQL()
         {
 
         }

@@ -32,7 +32,6 @@
             this.Email = new System.Windows.Forms.TextBox();
             this.PasswordTest = new System.Windows.Forms.TextBox();
             this.Wachtwoord = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.NumberOfAccounts = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.ADO1Query = new System.Windows.Forms.Button();
@@ -101,17 +100,6 @@
             this.Wachtwoord.TabIndex = 3;
             this.Wachtwoord.Text = "Password";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AccessibleName = "Activaded";
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(16, 119);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(88, 21);
-            this.checkBox1.TabIndex = 4;
-            this.checkBox1.Text = "Acticated";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // NumberOfAccounts
             // 
             this.NumberOfAccounts.Location = new System.Drawing.Point(19, 179);
@@ -137,6 +125,7 @@
             this.ADO1Query.Text = "Run ADO.NET Queries";
             this.ADO1Query.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.ADO1Query.UseVisualStyleBackColor = true;
+            this.ADO1Query.Click += new System.EventHandler(this.ADO1Query_Click);
             // 
             // Entity1Query
             // 
@@ -147,6 +136,7 @@
             this.Entity1Query.Text = "Run Entity Framework Queries";
             this.Entity1Query.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.Entity1Query.UseVisualStyleBackColor = true;
+            this.Entity1Query.Click += new System.EventHandler(this.Entity1Query_Click);
             // 
             // NoSQL1Query
             // 
@@ -435,7 +425,6 @@
             this.Controls.Add(this.ADO1Query);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumberOfAccounts);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.Wachtwoord);
             this.Controls.Add(this.PasswordTest);
             this.Controls.Add(this.Email);
@@ -457,7 +446,6 @@
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.TextBox PasswordTest;
         private System.Windows.Forms.Label Wachtwoord;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.NumericUpDown NumberOfAccounts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ADO1Query;
