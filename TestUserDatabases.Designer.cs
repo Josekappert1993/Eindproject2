@@ -64,7 +64,9 @@
             this.NoSQLQuery1000 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.netflixDataSet1 = new Eindproject2.netflixDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfAccounts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netflixDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // EmailAdress
@@ -162,9 +164,9 @@
             this.ADOQuery1.AutoSize = true;
             this.ADOQuery1.Location = new System.Drawing.Point(354, 107);
             this.ADOQuery1.Name = "ADOQuery1";
-            this.ADOQuery1.Size = new System.Drawing.Size(64, 17);
+            this.ADOQuery1.Size = new System.Drawing.Size(84, 17);
             this.ADOQuery1.TabIndex = 20;
-            this.ADOQuery1.Text = "00:00:00";
+            this.ADOQuery1.Text = "00:00:00:00";
             // 
             // EntityQuery1
             // 
@@ -207,9 +209,10 @@
             this.ADOQuery1000.AutoSize = true;
             this.ADOQuery1000.Location = new System.Drawing.Point(354, 150);
             this.ADOQuery1000.Name = "ADOQuery1000";
-            this.ADOQuery1000.Size = new System.Drawing.Size(64, 17);
+            this.ADOQuery1000.Size = new System.Drawing.Size(84, 17);
             this.ADOQuery1000.TabIndex = 26;
-            this.ADOQuery1000.Text = "00:00:00";
+            this.ADOQuery1000.Text = "00:00:00:00";
+            this.ADOQuery1000.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // label9
             // 
@@ -225,9 +228,9 @@
             this.ADOQuery100000.AutoSize = true;
             this.ADOQuery100000.Location = new System.Drawing.Point(354, 196);
             this.ADOQuery100000.Name = "ADOQuery100000";
-            this.ADOQuery100000.Size = new System.Drawing.Size(64, 17);
+            this.ADOQuery100000.Size = new System.Drawing.Size(84, 17);
             this.ADOQuery100000.TabIndex = 28;
-            this.ADOQuery100000.Text = "00:00:00";
+            this.ADOQuery100000.Text = "00:00:00:00";
             // 
             // label10
             // 
@@ -243,9 +246,9 @@
             this.ADOQuery1000000.AutoSize = true;
             this.ADOQuery1000000.Location = new System.Drawing.Point(354, 242);
             this.ADOQuery1000000.Name = "ADOQuery1000000";
-            this.ADOQuery1000000.Size = new System.Drawing.Size(64, 17);
+            this.ADOQuery1000000.Size = new System.Drawing.Size(84, 17);
             this.ADOQuery1000000.TabIndex = 30;
-            this.ADOQuery1000000.Text = "00:00:00";
+            this.ADOQuery1000000.Text = "00:00:00:00";
             // 
             // label11
             // 
@@ -391,11 +394,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "NoSQL";
             // 
+            // netflixDataSet1
+            // 
+            this.netflixDataSet1.DataSetName = "netflixDataSet";
+            this.netflixDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // TestUserDatabases
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1366, 290);
+            this.ClientSize = new System.Drawing.Size(1366, 667);
             this.Controls.Add(this.NoSQLQuery1000000);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.NoSQLQuery100000);
@@ -435,6 +443,7 @@
             this.Name = "TestUserDatabases";
             this.Text = "TestUserDatabases";
             ((System.ComponentModel.ISupportInitialize)(this.NumberOfAccounts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.netflixDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +487,6 @@
         private System.Windows.Forms.Label NoSQLQuery1000;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.GroupBox groupBox3;
+        private netflixDataSet netflixDataSet1;
     }
 }
