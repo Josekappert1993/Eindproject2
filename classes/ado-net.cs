@@ -95,16 +95,13 @@ namespace Eindproject2
 
                     SqlCommand cmd = new SqlCommand(insertQuery, connection);
                     cmd.ExecuteNonQuery();
-                    Console.WriteLine("test insert number:"+this.i);
                     SqlCommand cmd2 = new SqlCommand(readQuery, connection);
                     cmd2.ExecuteNonQuery();
-                    Console.WriteLine("test read number:"+this.i);
                     SqlCommand cmd3 = new SqlCommand(updateQuery, connection);
                     cmd3.ExecuteNonQuery();
-                    Console.WriteLine("test update number:"+this.i);
                     SqlCommand cmd4 = new SqlCommand(deleteQuery, connection);
                     cmd4.ExecuteNonQuery();
-                    Console.WriteLine("test deletenumber:"+this.i);                }
+                }
                 connection.Close();
                 MessageBox.Show("1000 queries");
             }
@@ -140,16 +137,12 @@ namespace Eindproject2
 
                     SqlCommand cmd = new SqlCommand(insertQuery, connection);
                     cmd.ExecuteNonQuery();
-                    Console.WriteLine("test insert number:" + this.j);
                     SqlCommand cmd2 = new SqlCommand(readQuery, connection);
                     cmd2.ExecuteNonQuery();
-                    Console.WriteLine("test read number:" + this.j);
                     SqlCommand cmd3 = new SqlCommand(updateQuery, connection);
                     cmd3.ExecuteNonQuery();
-                    Console.WriteLine("test update number:" + this.j);
                     SqlCommand cmd4 = new SqlCommand(deleteQuery, connection);
                     cmd4.ExecuteNonQuery();
-                    Console.WriteLine("test deletenumber:" + this.j);
                 }
                 connection.Close();
                 
@@ -186,16 +179,13 @@ namespace Eindproject2
 
                     SqlCommand cmd = new SqlCommand(insertQuery, connection);
                     cmd.ExecuteNonQuery();
-                    Console.WriteLine("test insert number:" + this.k);
                     SqlCommand cmd2 = new SqlCommand(readQuery, connection);
                     cmd2.ExecuteNonQuery();
                     //Console.WriteLine("test read number:" + this.k);
                     SqlCommand cmd3 = new SqlCommand(updateQuery, connection);
                     cmd3.ExecuteNonQuery();
-                    Console.WriteLine("test update number:" + this.k);
                     SqlCommand cmd4 = new SqlCommand(deleteQuery, connection);
                     cmd4.ExecuteNonQuery();
-                    Console.WriteLine("test deletenumber:" + this.k);
                 }
                 connection.Close();
                 MessageBox.Show("1000000 queries");

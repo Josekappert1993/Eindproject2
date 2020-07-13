@@ -13,6 +13,158 @@ namespace Eindproject2
 {
     class EntityFramework
     {
+        public string oneQuerieEntity;
+        public string thousandQuerieEntity;
+        public string hunderdThousandQuerieEntity;
+        public string milionQuerieEntity;
+
+        public void run1QueryEntity(string email, string password, int numberOfAccount)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            var account = new Account
+            {
+                id = 1,
+                email = email,
+                user_password = password,
+                logonAttempt = 0,
+                wrongLogon = 0,
+                number_of_account = numberOfAccount,
+                activated = true,
+                blocked = false
+            };
+            using (var entity = new NetflixContext())
+            {
+                entity.Accounts.Add(account);
+                var account_find = entity.Accounts.Find(1);
+                account_find.email = "test@test.com";
+                entity.Accounts.Remove(account_find);
+            }
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value. 
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            this.oneQuerieEntity = elapsedTime;
+            Console.Write("test");
+        }
+        public void run1000QueryEntity(string email, string password, int numberOfAccount)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            for(int i = 2; i <= 1000; i++)
+            {
+                var account = new Account
+                {
+                    id = i,
+                    email = email,
+                    user_password = password,
+                    logonAttempt = 0,
+                    wrongLogon = 0,
+                    number_of_account = numberOfAccount,
+                    activated = true,
+                    blocked = false
+                };
+                using (var entity = new NetflixContext())
+                {
+                    entity.Accounts.Add(account);
+                    var account_find = entity.Accounts.Find(i);
+                    account_find.email = "test"+ i + "@test.com";
+                    entity.Accounts.Remove(account_find);
+                }
+            }
+            
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value. 
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            this.thousandQuerieEntity = elapsedTime;
+            Console.Write("test");
+        }
+
+        
+        public void run100000Querys(string email, string password, int numberOfAccounts)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            for (int i = 2; i <= 100000; i++)
+            {
+                var account = new Account
+                {
+                    id = i,
+                    email = email,
+                    user_password = password,
+                    logonAttempt = 0,
+                    wrongLogon = 0,
+                    number_of_account = numberOfAccounts,
+                    activated = true,
+                    blocked = false
+                };
+                using (var entity = new NetflixContext())
+                {
+                    entity.Accounts.Add(account);
+                    var account_find = entity.Accounts.Find(i);
+                    account_find.email = "test" + i + "@test.com";
+                    entity.Accounts.Remove(account_find);
+                }
+            }
+
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value. 
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            this.hunderdThousandQuerieEntity = elapsedTime;
+            Console.Write("test");
+        }
+
+        public void run1000000Querys(string email, string password, int numberOfAccounts)
+        {
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            for (int i = 2; i <= 100000; i++)
+            {
+                var account = new Account
+                {
+                    id = i,
+                    email = email,
+                    user_password = password,
+                    logonAttempt = 0,
+                    wrongLogon = 0,
+                    number_of_account = numberOfAccounts,
+                    activated = true,
+                    blocked = false
+                };
+                using (var entity = new NetflixContext())
+                {
+                    entity.Accounts.Add(account);
+                    var account_find = entity.Accounts.Find(i);
+                    account_find.email = "test" + i + "@test.com";
+                    entity.Accounts.Remove(account_find);
+                }
+            }
+
+            stopWatch.Stop();
+            // Get the elapsed time as a TimeSpan value.
+            TimeSpan ts = stopWatch.Elapsed;
+
+            // Format and display the TimeSpan value. 
+            string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds,
+                ts.Milliseconds / 10);
+            this.milionQuerieEntity = elapsedTime;
+            Console.Write("test");
+        }
 
     }
     //account table
@@ -135,12 +287,13 @@ namespace Eindproject2
     }
 
     //subscription_has_account table
-    public class Subscription_has_account
+    /*public class Subscription_has_account
     {
+        [Key]
         public Subscription subscription_id { get; set; }
         public Account account_id { get; set; }
         public Profile profile_id { get; set; }
-    }
+    }*/
 
     //subtitle table
     public class Subtiltle
@@ -184,7 +337,7 @@ namespace Eindproject2
         public DbSet<Season> Seasons { get; set; }
         public DbSet<Serie> Series { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
-        public DbSet<Subscription_has_account> subscription_Has_Accounts { get; set; }
+        //public DbSet<Subscription_has_account> subscription_Has_Accounts { get; set; }
         public DbSet<Subtiltle> Subtiltles { get; set; }
         public DbSet<To_watchlist> To_Watchlists { get; set; }
         public DbSet<Watchlist> Watchlists { get; set; }

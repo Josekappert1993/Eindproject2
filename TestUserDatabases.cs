@@ -40,14 +40,18 @@ namespace Eindproject2
         {
             this.email = Email.Text;
             EntityFramework entity = new EntityFramework();
-            entity.run1Query(this.email);
+            this.email = Email.Text;
+            this.password = PasswordTest.Text;
+            this.numberOfAccounts = Int32.Parse(NumberOfAccounts.Value.ToString());
+            entity.run1QueryEntity(this.email, this.password, this.numberOfAccounts);
             EntityQuery1.Text = entity.oneQuerieEntity;
-            entity.run1000Querys(this.email);
+            entity.run1000QueryEntity(this.email, this.password, this.numberOfAccounts);
             EntityQuery1000.Text = entity.thousandQuerieEntity;
-            entity.run100000Querys(this.email);
+            entity.run100000Querys(this.email, this.password, this.numberOfAccounts);
             EntityQuery100000.Text = entity.hunderdThousandQuerieEntity;
-            entity.run1000000Querys(this.email);
-            EntityQuery100000.Text = entity.milionQuerieEntity;
+            entity.run1000000Querys(this.email, this.password, this.numberOfAccounts);
+            EntityQuery1000000.Text = entity.milionQuerieEntity;
         }
+
     }
 }

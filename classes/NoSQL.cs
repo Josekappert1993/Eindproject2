@@ -7,9 +7,11 @@ namespace Eindproject2
 {
     class NoSQL
     {
-        MongoClient dbClient = new MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false");
+        /*private MongoClient dbClient = new MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false");
         private int i;
         public string milionQuerieNosql;
+
+        public MongoClient DbClient { get => dbClient; set => dbClient = value; }
 
         public NoSQL()
         {
@@ -120,6 +122,6 @@ namespace Eindproject2
                 milionQuerieNosql = elapsedTime;
                 MessageBox.Show("1000000 queries");
             }
-        }
+        }*/
     }
 }
